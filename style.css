@@ -12,20 +12,19 @@ header {
     height: 100vh; /* Make the header full height of the viewport */
     display: flex; /* Use flexbox to center content */
     flex-direction: column; /* Stack children vertically */
-    justify-content: center; /* Center vertically */
+    justify-content: flex-start; /* Align items at the top */
     align-items: center; /* Center horizontally */
     background-color: rgba(173, 216, 230, 0.9); /* Less transparent light blue for header */
 }
 
 .hero-section {
     background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white for the hero section */
-    padding: 60px 30px; /* Increased padding for a larger area */
+    padding: 40px 20px; /* Decreased padding to move it up */
     border-radius: 10px; /* Rounded corners for the hero section */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    width: 80%; /* Adjust width to make it visually appealing */
+    width: 90%; /* Adjust width to make it visually appealing */
     max-width: 800px; /* Max width for larger screens */
-    position: relative; /* Allow positioning for absolute children */
-    z-index: 1; /* Ensure this is above the background image */
+    margin-top: 40px; /* Adjust margin to position it lower */
 }
 
 .hero-section h1 {
@@ -128,4 +127,5 @@ footer {
     text-align: center;
     margin-top: 20px;
     padding: 10px 0;
+}
 }
