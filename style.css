@@ -14,15 +14,15 @@ header {
     flex-direction: column; /* Stack children vertically */
     justify-content: center; /* Center vertically */
     align-items: center; /* Center horizontally */
-    background-color: rgba(173, 216, 230, 0.8); /* Light blue background with transparency */
 }
 
 .hero-section {
     background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white for the hero section */
-    padding: 40px; /* Increased padding for a larger area */
+    padding: 60px 20px; /* Increased padding for a larger area */
     border-radius: 10px; /* Rounded corners for the hero section */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
     width: 80%; /* Adjust width to make it visually appealing */
+    margin-top: 20px; /* Add margin to move it down */
 }
 
 .hero-section h1 {
