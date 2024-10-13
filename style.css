@@ -11,23 +11,23 @@ header {
     padding: 20px; /* Padding at the top */
     display: flex; /* Use flexbox to center content */
     flex-direction: column; /* Stack children vertically */
-    justify-content: flex-start; /* Align items at the top */
+    justify-content: center; /* Center items vertically */
     align-items: center; /* Center horizontally */
     background-color: rgba(173, 216, 230, 0.7); /* More transparent light blue for header */
-    position: fixed; /* Make header fixed */
     width: 100%; /* Full width */
-    top: 0; /* Stick to the top */
     z-index: 1000; /* Ensure it's above other content */
 }
 
 .hero-section {
     background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white for the hero section */
-    padding: 40px 20px; /* Adjusted padding for the hero section */
+    padding: 60px 20px; /* Adjusted padding for the hero section */
     border-radius: 10px; /* Rounded corners for the hero section */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
     width: 90%; /* Adjust width to make it visually appealing */
     max-width: 800px; /* Max width for larger screens */
-    margin-top: 120px; /* Increase margin to position hero section lower */
+    margin: 60px auto; /* Center the hero section with margin */
+    position: relative; /* Allow stacking above other content */
+    top: 20px; /* Move the hero section down slightly */
 }
 
 .hero-section h1 {
