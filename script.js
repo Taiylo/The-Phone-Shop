@@ -60,11 +60,37 @@ function viewOrders() {
 function submitQuotation() {
     const companyName = document.getElementById('company-name').value;
     const contactNumber = document.getElementById('contact-number').value;
-    const quantity = document.getElementById('quantity').value;
+    const quantity = parseInt(document.getElementById('quantity').value);
     const smartphoneType = document.getElementById('smartphone-type').value;
     const setupOption = document.getElementById('setup-option').value;
 
-    alert(`Quotation submitted for ${companyName} (${quantity} ${smartphoneType}, ${setupOption})`);
+    // Validate inputs
+    if (!companyName || !contactNumber || !quantity || quantity % 5 !== 0) {
+        document.getElementById('quotation-message').innerText = "Please fill out all fields and ensure quantity is a multiple of 5.";
+        return;
+    }
+
+    // Calculate costs
+    const smartphonePrice = parseInt(document.querySelector(`#smartphone-type option[value="${smartphoneType}"]`).dataset.price);
+    const setupPrice = parseInt(document.querySelector(`#setup-option option[value="${setupOption}"]`).dataset.price);
+    
+    const subtotal = (smartphonePrice * quantity) + setupPrice;
+    const vat = subtotal * 0.2; // 20% VAT
+    const totalCost = subtotal + vat;
+
+    // Display the details
+    document.getElementById('quotation-summary').innerText = `
+        Company Name: ${companyName}
+        Contact Number: ${contactNumber}
+        Quantity: ${quantity}
+        Smartphone Type: ${smartphoneType}
+        Setup Option: ${setupOption}
+        Subtotal: £${subtotal.toFixed(2)}
+        VAT: £${vat.toFixed(2)}
+    `;
+    
+    document.getElementById('total-cost').innerText = `Total Cost: £${totalCost.toFixed(2)}`;
+    document.getElementById('quotation-details').style.display = 'block';
     document.getElementById('quotation-message').innerText = "Quotation submitted successfully!";
 }
 
