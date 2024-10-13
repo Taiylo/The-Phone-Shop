@@ -1,54 +1,86 @@
-// Event listener for the quotation calculation
-document.getElementById('calculate-btn').addEventListener('click', function() {
-    // Collect input values
+const exampleOrders = [
+    {
+        companyName: "Tech Solutions",
+        contactNumber: "1234567890",
+        quantity: 10,
+        smartphoneType: "Standard",
+        setupOption: "Option A"
+    },
+    {
+        companyName: "Innovate Inc.",
+        contactNumber: "0987654321",
+        quantity: 5,
+        smartphoneType: "Superior",
+        setupOption: "Option B"
+    }
+];
+
+const customerOrders = [
+    {
+        companyName: "Example Corp",
+        contactNumber: "555-1234",
+        quantity: 20,
+        smartphoneType: "Basic",
+        setupOption: "Option A"
+    }
+];
+
+function login() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    if (username === "customer1" && password === "customer1") {
+        window.location.href = "customer-panel.html"; // Redirect to customer panel
+    } else if (username === "admin1" && password === "admin1") {
+        window.location.href = "admin-panel.html"; // Redirect to admin panel
+    } else {
+        document.getElementById('login-message').innerText = "Invalid username or password!";
+    }
+}
+
+function makeQuotation() {
+    document.getElementById('quotation').style.display = 'block';
+    document.getElementById('orders').style.display = 'none';
+}
+
+function viewOrders() {
+    const orderList = document.getElementById('order-list');
+    orderList.innerHTML = ''; // Clear existing orders
+
+    exampleOrders.forEach(order => {
+        const li = document.createElement('li');
+        li.innerText = `${order.companyName} - ${order.quantity} ${order.smartphoneType} (${order.setupOption})`;
+        orderList.appendChild(li);
+    });
+
+    document.getElementById('orders').style.display = 'block';
+    document.getElementById('quotation').style.display = 'none';
+}
+
+function submitQuotation() {
     const companyName = document.getElementById('company-name').value;
     const contactNumber = document.getElementById('contact-number').value;
-    const quantity = parseInt(document.getElementById('quantity').value);
+    const quantity = document.getElementById('quantity').value;
     const smartphoneType = document.getElementById('smartphone-type').value;
     const setupOption = document.getElementById('setup-option').value;
 
-    // Validate quantity
-    if (quantity < 5 || quantity > 100 || quantity % 5 !== 0) {
-        alert("Quantity must be in multiples of 5 and between 5 and 100.");
-        return;
+    // Here you could save the quotation to a server or local storage if needed
+    alert(`Quotation submitted for ${companyName} (${quantity} ${smartphoneType}, ${setupOption})`);
+    document.getElementById('quotation-message').innerText = "Quotation submitted successfully!";
+}
+
+function logout() {
+    window.location.href = 'index.html'; // Redirect to home page
+}
+
+// Populate customer orders in admin panel
+document.addEventListener("DOMContentLoaded", function() {
+    if (window.location.pathname.includes("admin-panel.html")) {
+        const customerOrderList = document.getElementById('customer-orders');
+        customerOrders.forEach(order => {
+            const li = document.createElement('li');
+            li.innerText = `${order.companyName} - ${order.quantity} ${order.smartphoneType} (${order.setupOption})`;
+            customerOrderList.appendChild(li);
+        });
     }
-
-    // Define prices
-    const smartphonePrices = {
-        basic: 250,
-        standard: 450,
-        superior: 950
-    };
-    const setupPrices = {
-        A: 30,
-        B: 50
-    };
-
-    // Calculate costs
-    const smartphonePrice = smartphonePrices[smartphoneType] * quantity;
-    const setupCost = setupPrices[setupOption];
-    const subtotal = smartphonePrice + setupCost;
-    const vat = subtotal * 0.20;
-    const total = subtotal + vat;
-
-    // Display itemized quotation
-    const quoteResult = `
-        <h3>Itemized Quotation</h3>
-        <p><strong>Company Name:</strong> ${companyName}</p>
-        <p><strong>Contact Number:</strong> ${contactNumber}</p>
-        <p><strong>Quantity of Smartphones:</strong> ${quantity}</p>
-        <p><strong>Smartphone Type:</strong> ${smartphoneType} (£${smartphonePrices[smartphoneType]})</p>
-        <p><strong>Setup Option:</strong> Option ${setupOption} (£${setupCost})</p>
-        <p><strong>Subtotal:</strong> £${subtotal.toFixed(2)}</p>
-        <p><strong>VAT (20%):</strong> £${vat.toFixed(2)}</p>
-        <p><strong>Total (including VAT):</strong> £${total.toFixed(2)}</p>
-    `;
-
-    document.getElementById('quote-result').innerHTML = quoteResult;
-});
-
-// Event listener for showing support number
-document.getElementById('show-support-btn').addEventListener('click', function() {
-    const supportInfo = document.getElementById('support-info');
-    supportInfo.style.display = supportInfo.style.display === 'none' ? 'block' : 'none';
 });
