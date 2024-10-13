@@ -35,4 +35,13 @@
                 window.location.href = 'customer-panel.html';
             } else if (username === 'Admin1' && password === 'Admin1') {
                 // Redirect to admin panel
-                window.location.href = 'admin-panel.html';
+                window.location.href = 'admin-panel.html'; // Change this to your admin panel URL
+            } else {
+                const errorMessage = document.getElementById('error-message');
+                errorMessage.textContent = 'Invalid username or password';
+                errorMessage.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
