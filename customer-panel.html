@@ -25,6 +25,7 @@
         <form id="quotationForm">
             <input type="text" id="customerName" placeholder="Customer Name" required>
             <input type="text" id="companyName" placeholder="Company Name" required>
+            <input type="text" id="phoneNumber" placeholder="Phone Number" required>
             <input type="number" id="quantity" placeholder="Quantity (must be multiple of 5)" required>
             <select id="smartphoneType" required>
                 <option value="" disabled selected>Select Smartphone Type</option>
@@ -43,7 +44,7 @@
         <!-- Quotation Result Display Box -->
         <div class="quotation-result" id="quotation-result" style="display:none;">
             <h3>Quotation Details</h3>
-            <p id="quotation-details"></p>
+            <div id="quotation-details" style="white-space: pre-line;"></div> <!-- Preserves line breaks -->
             <button id="update-button" style="display:none;">Update Quotation</button> <!-- Update button -->
         </div>
         
@@ -60,6 +61,7 @@
             // Get form values
             const customerName = document.getElementById('customerName').value;
             const companyName = document.getElementById('companyName').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
             const quantity = Number(document.getElementById('quantity').value);
             const smartphoneType = document.getElementById('smartphoneType').value;
             const setupOption = document.getElementById('setupOption').value;
@@ -92,14 +94,15 @@
             // Display quotation result in the box
             const quotationResult = document.getElementById('quotation-result');
             const quotationDetails = document.getElementById('quotation-details');
-            quotationDetails.textContent = `
-                Customer: ${customerName}
-                Company: ${companyName}
-                Quantity: ${quantity}
-                Smartphone Type: ${smartphoneType}
-                Setup Option: ${setupOption}
-                Total Cost: £${totalCost.toFixed(2)}
-                VAT: £${vat.toFixed(2)}
+            quotationDetails.innerHTML = `
+                Customer: ${customerName}<br>
+                Company: ${companyName}<br>
+                Phone Number: ${phoneNumber}<br>
+                Quantity: ${quantity}<br>
+                Smartphone Type: ${smartphoneType}<br>
+                Setup Option: ${setupOption}<br>
+                Total Cost: £${totalCost.toFixed(2)}<br>
+                VAT: £${vat.toFixed(2)}<br>
                 Total Cost Including VAT: £${totalWithVAT.toFixed(2)}
             `;
             quotationResult.style.display = 'block'; // Show the result box
@@ -111,17 +114,19 @@
         // Event listener for the update button
         document.getElementById('update-button').addEventListener('click', function() {
             // Populate the form with existing values for editing
-            const details = document.getElementById('quotation-details').textContent.split('\n').map(line => line.split(': ')[1]);
+            const details = document.getElementById('quotation-details').innerText.split('\n').map(line => line.split(': ')[1]);
 
             document.getElementById('customerName').value = details[0];
             document.getElementById('companyName').value = details[1];
-            document.getElementById('quantity').value = details[2];
-            document.getElementById('smartphoneType').value = details[3].toLowerCase();
-            document.getElementById('setupOption').value = details[4].toLowerCase();
+            document.getElementById('phoneNumber').value = details[2];
+            document.getElementById('quantity').value = details[3];
+            document.getElementById('smartphoneType').value = details[4].toLowerCase();
+            document.getElementById('setupOption').value = details[5].toLowerCase();
 
             // Hide the quotation result box
             document.getElementById('quotation-result').style.display = 'none';
         });
     </script>
 </body>
+</html>
 </html>
