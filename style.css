@@ -21,6 +21,8 @@ header {
     padding: 20px; /* Padding at the top */
     position: relative; /* Relative positioning to allow proper stacking */
     z-index: 2; /* Ensure header is above the overlay */
+    background-color: rgba(169, 169, 169, 0.8); /* Grey transparent background */
+    margin-top: 20px; /* Space above header to separate from blue overlay */
 }
 
 .header-title {
@@ -119,8 +121,13 @@ button:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.quotation-container {
-    margin-top: 20px;
+.quotation-result {
+    background-color: #e9ecef; /* Light background */
+    border: 1px solid #ced4da; /* Border for the box */
+    padding: 15px; /* Padding inside the box */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 20px; /* Space above the result box */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
 }
 
 footer {
