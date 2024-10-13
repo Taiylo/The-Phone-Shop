@@ -86,12 +86,16 @@ button:hover {
 }
 
 .quotation-box {
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
     padding: 15px;
     border-radius: 5px;
     margin-top: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.quotation-container {
+    margin-top: 20px;
 }
 
 footer {
