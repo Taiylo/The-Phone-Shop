@@ -24,6 +24,8 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
     width: 90%; /* Adjust width to make it visually appealing */
     max-width: 800px; /* Max width for larger screens */
+    position: relative; /* Allow positioning for absolute children */
+    z-index: 1; /* Ensure this is above the background image */
 }
 
 .hero-section h1 {
