@@ -1,4 +1,4 @@
-ody {
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -9,7 +9,7 @@ ody {
 header {
     text-align: center;
     padding: 100px 20px;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    background-color: #ADD8E6; /* Light blue background */
 }
 
 .hero-section h1 {
@@ -24,39 +24,17 @@ header {
 .hero-button {
     display: inline-block;
     padding: 15px 30px;
-    background-color: #28a745;
-    color: white;
+    background-color: white; /* White background for the button */
+    color: #007bff; /* Blue text color for contrast */
     text-decoration: none;
     border-radius: 5px;
     margin-top: 20px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s; /* Added color transition */
 }
 
 .hero-button:hover {
-    background-color: #218838;
-}
-
-/* New styles for the login button container */
-.login-button-container {
-    display: inline-block;
-    background-color: rgba(255, 255, 255, 0.8); /* Light grey background */
-    border: 1px solid #ccc; /* Light border */
-    border-radius: 5px;
-    padding: 10px; /* Padding around the button */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-}
-
-.login-button {
-    padding: 10px 20px;
-    background-color: transparent; /* No background color for the button */
-    color: #007bff; /* Change button text color */
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.login-button:hover {
-    background-color: rgba(0, 123, 255, 0.1); /* Light blue background on hover */
+    background-color: #f1f1f1; /* Slight grey on hover */
+    color: #0056b3; /* Darker blue text on hover */
 }
 
 .features {
