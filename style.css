@@ -14,15 +14,16 @@ header {
     flex-direction: column; /* Stack children vertically */
     justify-content: center; /* Center vertically */
     align-items: center; /* Center horizontally */
+    background-color: rgba(173, 216, 230, 0.9); /* Less transparent light blue for header */
 }
 
 .hero-section {
-    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white for the hero section */
+    background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white for the hero section */
     padding: 60px 20px; /* Increased padding for a larger area */
     border-radius: 10px; /* Rounded corners for the hero section */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    width: 100%; /* Adjust width to make it visually appealing */
-    margin-top: 30px; /* Add margin to move it down */
+    width: 90%; /* Adjust width to make it visually appealing */
+    max-width: 800px; /* Max width for larger screens */
 }
 
 .hero-section h1 {
@@ -52,7 +53,7 @@ header {
 
 .features {
     background-color: rgba(255, 255, 255, 0.8); /* Light background for contrast */
-    padding: 50px 80px;
+    padding: 50px 20px;
     text-align: center;
 }
 
