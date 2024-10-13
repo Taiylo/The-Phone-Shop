@@ -23,16 +23,16 @@
 
         <h3>Get Your Quote</h3>
         <form id="quotationForm">
-            <input type="text" placeholder="Customer Name" required>
-            <input type="text" placeholder="Company Name" required>
-            <input type="number" placeholder="Quantity (must be multiple of 5)" required>
-            <select required>
+            <input type="text" id="customerName" placeholder="Customer Name" required>
+            <input type="text" id="companyName" placeholder="Company Name" required>
+            <input type="number" id="quantity" placeholder="Quantity (must be multiple of 5)" required>
+            <select id="smartphoneType" required>
                 <option value="" disabled selected>Select Smartphone Type</option>
                 <option value="basic">Basic</option>
                 <option value="standard">Standard</option>
                 <option value="superior">Superior</option>
             </select>
-            <select required>
+            <select id="setupOption" required>
                 <option value="" disabled selected>Select Setup Option</option>
                 <option value="optionA">Option A (5 apps for £30)</option>
                 <option value="optionB">Option B (10 apps for £50)</option>
@@ -44,6 +44,7 @@
         <div class="quotation-result" id="quotation-result" style="display:none;">
             <h3>Quotation Details</h3>
             <p id="quotation-details"></p>
+            <button id="update-button" style="display:none;">Update Quotation</button> <!-- Update button -->
         </div>
         
         <div class="error-message" id="error-message" style="display:none;"></div>
@@ -57,11 +58,11 @@
             event.preventDefault(); // Prevent default form submission
 
             // Get form values
-            const customerName = event.target[0].value;
-            const companyName = event.target[1].value;
-            const quantity = Number(event.target[2].value);
-            const smartphoneType = event.target[3].value;
-            const setupOption = event.target[4].value;
+            const customerName = document.getElementById('customerName').value;
+            const companyName = document.getElementById('companyName').value;
+            const quantity = Number(document.getElementById('quantity').value);
+            const smartphoneType = document.getElementById('smartphoneType').value;
+            const setupOption = document.getElementById('setupOption').value;
 
             // Validate quantity (must be a multiple of 5)
             if (quantity < 5 || quantity % 5 !== 0) {
@@ -102,6 +103,24 @@
                 Total Cost Including VAT: £${totalWithVAT.toFixed(2)}
             `;
             quotationResult.style.display = 'block'; // Show the result box
+
+            // Show the update button
+            document.getElementById('update-button').style.display = 'inline-block';
+        });
+
+        // Event listener for the update button
+        document.getElementById('update-button').addEventListener('click', function() {
+            // Populate the form with existing values for editing
+            const details = document.getElementById('quotation-details').textContent.split('\n').map(line => line.split(': ')[1]);
+
+            document.getElementById('customerName').value = details[0];
+            document.getElementById('companyName').value = details[1];
+            document.getElementById('quantity').value = details[2];
+            document.getElementById('smartphoneType').value = details[3].toLowerCase();
+            document.getElementById('setupOption').value = details[4].toLowerCase();
+
+            // Hide the quotation result box
+            document.getElementById('quotation-result').style.display = 'none';
         });
     </script>
 </body>
