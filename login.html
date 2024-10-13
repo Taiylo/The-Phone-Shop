@@ -12,14 +12,36 @@
     </header>
     <div class="page-content">
         <h1>Login</h1>
-        <form>
-            <input type="text" placeholder="Username" required>
-            <input type="password" placeholder="Password" required>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
             <button type="submit">Login</button>
         </form>
+        <div class="error-message" id="error-message" style="display:none;"></div>
     </div>
     <footer>
         <p>&copy; 2024 The Phone Shop</p>
     </footer>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Example login logic (replace with actual logic)
+            if (username === 'Customer1' && password === 'Customer1') {
+                // Redirect to customer panel
+                window.location.href = 'customer-panel.html';
+            } else if (username === 'Admin1' && password === 'Admin1') {
+                // Redirect to admin panel
+                window.location.href = 'admin-panel.html'; // Change this to your admin panel URL
+            } else {
+                const errorMessage = document.getElementById('error-message');
+                errorMessage.textContent = 'Invalid username or password';
+                errorMessage.style.display = 'block';
+            }
+        });
+    </script>
 </body>
 </html>
