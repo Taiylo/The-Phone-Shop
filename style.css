@@ -8,7 +8,7 @@ body {
 
 header {
     text-align: center;
-    padding: 20px; /* Remove padding */
+    padding: 20px; /* Padding at the top */
     display: flex; /* Use flexbox to center content */
     flex-direction: column; /* Stack children vertically */
     justify-content: flex-start; /* Align items at the top */
@@ -27,7 +27,7 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
     width: 90%; /* Adjust width to make it visually appealing */
     max-width: 800px; /* Max width for larger screens */
-    margin-top: 100px; /* Position the hero section below the header */
+    margin-top: 120px; /* Increase margin to position hero section lower */
 }
 
 .hero-section h1 {
