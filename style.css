@@ -28,6 +28,20 @@ header {
     margin: 0; /* Remove default margin */
 }
 
+.hero-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: white; /* White background for the button */
+    color: #007bff; /* Blue text color for contrast */
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s, color 0.3s; /* Added color transition */
+}
+
+.hero-button:hover {
+    background-color: #f1f1f1; /* Slight grey on hover */
+    color: #0056b3; /* Darker blue text on hover */
 .subtext {
     font-size: 1.5em; /* Size for the subtext */
     margin: 20px 0; /* Space between header and subtext */
