@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Customer Panel</h1>
+        <button onclick="logout()">Logout</button>
+    </header>
+
+    <section>
+        <h2>Options</h2>
+        <button onclick="makeQuotation()">Make a New Quotation</button>
+        <button onclick="viewOrders()">View Previous Orders</button>
+    </section>
+
+    <div id="orders" style="display:none;">
+        <h2>Previous Orders</h2>
+        <ul id="order-list"></ul>
+    </div>
+
+    <div id="quotation" style="display:none;">
+        <h2>Quotation</h2>
+        <input type="text" id="company-name" placeholder="Company Name" required>
+        <input type="tel" id="contact-number" placeholder="Contact Number" required>
+        <input type="number" id="quantity" placeholder="Quantity (5-100)" min="5" max="100" step="5" required>
+        <select id="smartphone-type">
+            <option value="Basic">Basic (£250)</option>
+            <option value="Standard">Standard (£450)</option>
+            <option value="Superior">Superior (£950)</option>
+        </select>
+        <select id="setup-option">
+            <option value="Option A">Option A (5 apps for £30)</option>
+            <option value="Option B">Option B (10 apps for £50)</option>
+        </select>
+        <button onclick="submitQuotation()">Submit Quotation</button>
+        <p id="quotation-message"></p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 The Phone Shop</p>
+    </footer>
+</body>
+</html>
