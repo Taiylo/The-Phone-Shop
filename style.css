@@ -18,11 +18,11 @@ header {
 
 .hero-section {
     background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white for the hero section */
-    padding: 60px 40px; /* Increased padding for a larger area */
+    padding: 60px 20px; /* Increased padding for a larger area */
     border-radius: 10px; /* Rounded corners for the hero section */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    width: 80%; /* Adjust width to make it visually appealing */
-    margin-top: 20px; /* Add margin to move it down */
+    width: 100%; /* Adjust width to make it visually appealing */
+    margin-top: 30px; /* Add margin to move it down */
 }
 
 .hero-section h1 {
@@ -52,7 +52,7 @@ header {
 
 .features {
     background-color: rgba(255, 255, 255, 0.8); /* Light background for contrast */
-    padding: 50px 20px;
+    padding: 50px 80px;
     text-align: center;
 }
 
