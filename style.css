@@ -19,10 +19,10 @@ header {
 
 .hero-section {
     background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white for the hero section */
-    padding: 60px 20px; /* Increased padding for a larger area */
+    padding: 60px 30px; /* Increased padding for a larger area */
     border-radius: 10px; /* Rounded corners for the hero section */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    width: 90%; /* Adjust width to make it visually appealing */
+    width: 80%; /* Adjust width to make it visually appealing */
     max-width: 800px; /* Max width for larger screens */
     position: relative; /* Allow positioning for absolute children */
     z-index: 1; /* Ensure this is above the background image */
