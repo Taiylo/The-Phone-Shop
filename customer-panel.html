@@ -39,8 +39,9 @@
             <option value="Option B" data-price="50">Option B (10 apps for £50)</option>
         </select>
         <button onclick="submitQuotation()">Submit Quotation</button>
-        <p id="quotation-message"></p>
-        <div id="quotation-details" style="display:none;">
+        <p id="quotation-message" class="error-message"></p>
+        
+        <div id="quotation-details" style="display:none;" class="quotation-box">
             <h3>Quotation Details</h3>
             <p id="quotation-summary"></p>
             <p id="total-cost"></p>
