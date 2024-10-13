@@ -39,6 +39,13 @@
             </select>
             <button type="submit">Get Quotation</button>
         </form>
+        
+        <!-- Quotation Result Display Box -->
+        <div class="quotation-result" id="quotation-result" style="display:none;">
+            <h3>Quotation Details</h3>
+            <p id="quotation-details"></p>
+        </div>
+        
         <div class="error-message" id="error-message" style="display:none;"></div>
     </div>
     <footer>
@@ -81,8 +88,20 @@
             const vat = totalCost * 0.2; // VAT at 20%
             const totalWithVAT = totalCost + vat;
 
-            // Display quotation result
-            alert(`Quotation Details:\nCustomer: ${customerName}\nCompany: ${companyName}\nQuantity: ${quantity}\nSmartphone Type: ${smartphoneType}\nSetup Option: ${setupOption}\nTotal Cost: £${totalCost}\nVAT: £${vat}\nTotal Cost Including VAT: £${totalWithVAT}`);
+            // Display quotation result in the box
+            const quotationResult = document.getElementById('quotation-result');
+            const quotationDetails = document.getElementById('quotation-details');
+            quotationDetails.textContent = `
+                Customer: ${customerName}
+                Company: ${companyName}
+                Quantity: ${quantity}
+                Smartphone Type: ${smartphoneType}
+                Setup Option: ${setupOption}
+                Total Cost: £${totalCost.toFixed(2)}
+                VAT: £${vat.toFixed(2)}
+                Total Cost Including VAT: £${totalWithVAT.toFixed(2)}
+            `;
+            quotationResult.style.display = 'block'; // Show the result box
         });
     </script>
 </body>
