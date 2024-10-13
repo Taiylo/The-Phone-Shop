@@ -5,19 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 <body>
     <header>
         <h1>Admin Panel</h1>
-        <button onclick="logout()">Logout</button>
+        <p><a href="login.html" class="hero-button">Log Out</a></p> <!-- Link to log out (go to login page) -->
     </header>
+    <div class="page-content">
+        <h2>Welcome, Admin!</h2>
+        <p>Here are the customer orders:</p>
 
-    <section>
-        <h2>Customer Orders</h2>
-        <ul id="customer-orders"></ul>
-    </section>
-
+        <h3>Orders Overview</h3>
+        <div class="quotation-box">
+            <p><strong>Customer Name:</strong> Customer1</p>
+            <p><strong>Order:</strong> 10 Basic Smartphones - Setup Option A</p>
+            <p><strong>Customer Name:</strong> Customer2</p>
+            <p><strong>Order:</strong> 5 Superior Smartphones - Setup Option B</p>
+        </div>
+    </div>
     <footer>
         <p>&copy; 2024 The Phone Shop</p>
     </footer>
