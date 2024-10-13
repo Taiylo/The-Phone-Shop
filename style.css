@@ -1,93 +1,42 @@
-/* Base styling */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    padding: 20px;
 }
 
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #007bff;
+    color: white;
     padding: 10px 0;
     text-align: center;
 }
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
+h1, h2 {
+    margin: 20px 0;
 }
 
 section {
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 600px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
 }
 
-/* Form styling */
-form label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-form input, form select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-/* Buttons styling */
-#calculate-btn, #show-support-btn {
-    background-color: #333;
-    color: #fff;
+input, select, button {
+    margin: 10px 0;
     padding: 10px;
+    width: 100%;
+    max-width: 300px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
     border: none;
     cursor: pointer;
-    margin-top: 15px;
 }
 
-#show-support-btn {
-    background-color: #f04a24;
+button:hover {
+    background-color: #218838;
 }
 
-/* Support info styling */
-#support-info {
-    margin-top: 10px;
-    font-size: 1.1em;
-    color: #f04a24;
-    font-weight: bold;
-}
-
-/* Quotation result */
-#quote-result {
-    margin-top: 20px;
-    background-color: #f8f8f8;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Footer styling */
 footer {
     text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-}
+    margin-top: 20px;
