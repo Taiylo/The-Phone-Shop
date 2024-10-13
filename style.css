@@ -1,10 +1,9 @@
-body {
+ody {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background: url('https://source.unsplash.com/1600x900/?smartphone,tech') no-repeat center center fixed;
     background-size: cover;
-    color: white;
 }
 
 header {
@@ -35,6 +34,29 @@ header {
 
 .hero-button:hover {
     background-color: #218838;
+}
+
+/* New styles for the login button container */
+.login-button-container {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.8); /* Light grey background */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px;
+    padding: 10px; /* Padding around the button */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.login-button {
+    padding: 10px 20px;
+    background-color: transparent; /* No background color for the button */
+    color: #007bff; /* Change button text color */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: rgba(0, 123, 255, 0.1); /* Light blue background on hover */
 }
 
 .features {
@@ -88,20 +110,6 @@ button {
 
 button:hover {
     background-color: #218838;
-}
-
-.login-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
-}
-
-.login-button:hover {
-    background-color: #0056b3;
 }
 
 .error-message {
