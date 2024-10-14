@@ -74,7 +74,7 @@ function submitQuotation() {
     const smartphonePrice = parseInt(document.querySelector(`#smartphone-type option[value="${smartphoneType}"]`).dataset.price);
     const setupPrice = parseInt(document.querySelector(`#setup-option option[value="${setupOption}"]`).dataset.price);
     
-    const subtotal = (smartphonePrice * quantity) + setupPrice;
+    const subtotal = (smartphonePrice * quantity) + (setupPrice * quantity);
     const vat = subtotal * 0.2; // 20% VAT
     const totalCost = subtotal + vat;
 
