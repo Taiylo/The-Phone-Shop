@@ -71,12 +71,19 @@ function submitQuotation() {
     }
 
     // Calculate costs
-    const smartphonePrice = parseInt(document.querySelector(`#smartphone-type option[value="${smartphoneType}"]`).dataset.price);
-    const setupPrice = parseInt(document.querySelector(`#setup-option option[value="${setupOption}"]`).dataset.price);
-    
+    const smartphonePrice = parseFloat(document.querySelector(`#smartphone-type option[value="${smartphoneType}"]`).dataset.price);
+    const setupPrice = parseFloat(document.querySelector(`#setup-option option[value="${setupOption}"]`).dataset.price);
+
+    if (isNaN(smartphonePrice) || isNaN(setupPrice)) {
+        document.getElementById('quotation-message').innerText = "Invalid price data. Please check the options.";
+        return;
+    }
+
     const subtotal = (smartphonePrice * quantity) + (setupPrice * quantity);
     const vat = subtotal * 0.2; // 20% VAT
     const totalCost = subtotal + vat;
+
+    document.getElementById('quotation-message').innerText = `Subtotal: £${subtotal.toFixed(2)}, VAT: £${vat.toFixed(2)}, Total: £${totalCost.toFixed(2)}`;
 
     // Display the details
     document.getElementById('quotation-summary').innerText = `
